@@ -1,6 +1,11 @@
+/* Selecting the elements with the class of mario and pipe. */
 const mario = document.querySelector('.mario')
 const pipe = document.querySelector('.pipe');
 
+/**
+ * When the jump function is called, add the jump class to the mario element, then after 500
+ * milliseconds, remove the jump class from the mario element.
+ */
 const jump = () => {
     mario.classList.add('jump')
 
@@ -9,6 +14,8 @@ const jump = () => {
     }, 500);
 }
 
+/* Checking the position of the pipe and mario every 10 milliseconds. If the pipe is within 120 pixels
+of the mario, the game is over. */
 const loop = setInterval(() => {
 
     console.log('loop')
@@ -33,4 +40,5 @@ const loop = setInterval(() => {
 
 }, 10)
 
+/* Listening for a keydown event, and when it occurs, it calls the jump function. */
 document.addEventListener('keydown', jump)
